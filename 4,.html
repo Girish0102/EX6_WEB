@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Running Athlete</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #eeeeee;
+        }
+
+        .track {
+            width: 700px;
+            height: 180px;
+            margin: 30px auto;
+            background-color: #555555;
+            border: 3px solid black;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #img {
+            width: 100px;
+            position: absolute;
+            left: 0px;
+            top: 40px;
+        }
+
+        #lap {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 8px 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body onload="init()">
+
+<h1>Running Athlete</h1>
+
+<div class="track">
+    <img id="img" src="runner.jpeg">
+</div>
+
+<p id="lap">Laps: 0</p>
+
+<button onclick="moveRight()">Start</button>
+<button onclick="stop()">Stop</button>
+
+<script>
+
+var imgObj;
+var animate;
+var position = 0;
+var laps = 0;
+
+function init() {
+    imgObj = document.getElementById("img");
+    position = 0;
+}
+
+function moveRight() {
+
+    position = position + 5;
+
+    imgObj.style.left = position + "px";
+
+    if (position >= 600) {
+        position = 0;
+        laps = laps + 1;
+
+        document.getElementById("lap").innerHTML =
+            "Laps: " + laps;
+
+        imgObj.style.left = "0px";
+    }
+
+    animate = setTimeout(moveRight, 50);
+}
+
+function stop() {
+    clearTimeout(animate);
+}
+
+</script>
+
+</body>
+</html>

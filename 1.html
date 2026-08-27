@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gym Digital Clock</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            background-image: url("gym.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 40px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        #time {
+            font-size: 70px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px 40px;
+            border-radius: 15px;
+            text-shadow: 2px 2px 5px black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Gym Training Clock</h1>
+
+    <h2 id="time"></h2>
+
+    <script>
+        function display() {
+
+            var d = new Date();
+
+            var h = d.getHours();
+            var m = d.getMinutes();
+            var s = d.getSeconds();
+
+            document.getElementById("time").innerHTML =
+                h + ":" + m + ":" + s;
+        }
+
+        setInterval(display, 1000);
+
+        display();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gym Members</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #eeeeee;
+            text-align: center;
+        }
+
+        #members {
+            width: 500px;
+            margin: 30px auto;
+            text-align: left;
+        }
+
+        .member {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px gray;
+        }
+
+        h1 {
+            color: #222222;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Gym Member Details</h1>
+
+<div id="members"></div>
+
+<script>
+
+var members = [
+
+    {name:"Arun", regno:"GYM101", dob:1998},
+    {name:"Rahul", regno:"GYM102", dob:2002},
+    {name:"Kiran", regno:"GYM103", dob:1997},
+    {name:"Vijay", regno:"GYM104", dob:2004}
+
+];
+
+for (var i = 0; i < members.length; i++) {
+
+    var m = members[i];
+
+    document.getElementById("members").innerHTML +=
+        "<div class='member'>" +
+        "<b>Name:</b> " + m.name +
+        "<br><b>Register Number:</b> " + m.regno +
+        "<br><b>Year of Birth:</b> " + m.dob;
+
+    if (m.dob < 2000) {
+        document.getElementById("members").innerHTML +=
+            "<br><b>Category:</b> Senior Member</div>";
+    }
+    else {
+        document.getElementById("members").innerHTML +=
+            "<br><b>Category:</b> Junior Member</div>";
+    }
+}
+
+</script>
+
+</body>
+</html>

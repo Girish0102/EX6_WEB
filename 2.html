@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gym Theme</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial;
+            color: white;
+            transition: background-color 1s;
+        }
+
+        .box {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>Dynamic Gym Theme</h1>
+    <p>The background changes automatically.</p>
+</div>
+
+<script>
+
+function changeColor() {
+
+    var colors = ["#222222", "#333333", "#4a1f1f", "#1f334a"];
+
+    var random = Math.floor(Math.random() * colors.length);
+
+    document.body.style.backgroundColor = colors[random];
+}
+
+setInterval(changeColor, 5000);
+
+changeColor();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise Instructions</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #eeeeee;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .box {
+            background-color: white;
+            width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h1 {
+            color: #222222;
+        }
+
+        #exercise {
+            font-size: 16px;
+            line-height: 1.6;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Exercise Instructions</h1>
+
+    <p id="exercise"
+       onmouseover="incSize()"
+       onmouseout="decSize()">
+
+        Move your mouse over this text to zoom in.<br><br>
+        Keep your back straight while performing squats.
+
+    </p>
+
+</div>
+
+<script>
+
+function incSize() {
+    document.getElementById("exercise").style.fontSize = "28px";
+}
+
+function decSize() {
+    document.getElementById("exercise").style.fontSize = "16px";
+}
+
+</script>
+
+</body>
+
+</html>
